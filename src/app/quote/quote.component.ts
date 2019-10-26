@@ -9,10 +9,10 @@ import { Quote } from '../Quote';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote =[
-    {id:1,name: "Be inspired before you expire"},
-    {id:2,name :"We are what we believe we are!"},
-    {id:3,name:"Change your thoughts and you change your world"},
-    {id:4,name: "If opportunity doesn't knock, build a door"},
+    {id:1,name: "Be inspired before you expire",author:"Pepe Minambo"},
+    {id:2,name :"We are what we believe we are!",author:"Maya Angelou"},
+    {id:3,name:"Change your thoughts and you change your world",author:"Nelson Mandela"},
+    {id:4,name: "If opportunity doesn't knock, build a door",author:"Kakuzi Bunuzi"},
     ];
 
   constructor() { }
