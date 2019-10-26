@@ -14,7 +14,9 @@ export class QuoteComponent implements OnInit {
     {id:3,name:"Change your thoughts and you change your world",author:"Nelson Mandela"},
     {id:4,name: "If opportunity doesn't knock, build a door",author:"Kakuzi Bunuzi"},
     ];
-
+ toggleDetails (index){
+   this.quotes[index].showAuthor=!this.quotes[index].showAuthor;
+ }
   constructor() { }
 
   ngOnInit() {
