@@ -10,8 +10,10 @@ import { Quote } from "../quote"
 export class QuoteauthorComponent implements OnInit {
 @Input() quote: Quote;
 @Output() isVoted = new EventEmitter<boolean>();
-quoteVoted(voted:boolean){
+
+quoteVote(voted:boolean){
   this.isVoted.emit(voted);
+  
 }
   constructor() { }
 

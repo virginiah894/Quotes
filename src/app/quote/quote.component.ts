@@ -9,22 +9,29 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] =[
-    {id:1,name: "Be inspired before you expire",author:"Pepe Minambo"},
-    {id:2,name :"We are what we believe we are!",author:"Maya Angelou"},
-    {id:3,name:"Change your thoughts and you change your world",author:"Nelson Mandela"},
-    {id:4,name: "If opportunity doesn't knock, build a door",author:"Kakuzi Bunuzi"},
+    new Quote(1,"Be inspired before you expire","Pepe Minambo"),
+    new Quote(2, "We are what we believe we are!","Maya Angelou"),
+    new Quote (3,"Change your thoughts and you change your world","Nelson Mandela"),
+    new Quote(4,"If opportunity doesn't knock, build a door","Kakuzi Bunuzi"),
     ];
- toggleDetails (index){
-   this.quotes[index].showAuthor=!this.quotes[index].showAuthor;
- }
- quoteVoted( isVoted, index){
-   if (isVoted){
-     this.quotes.splice(index,1);
-   }
- }
+
+
+    toggleDetails(index){
+      this.quotes[index].showAuthor = !this.quotes[index].showAuthor;
+    }
+
+    
+  upVote(isVoted,index){
+    if (isVoted){
+      this.quotes.splice(index,1);
+    }
+  }
+ 
   constructor() { }
 
   ngOnInit() {
   }
 
 }
+
+
