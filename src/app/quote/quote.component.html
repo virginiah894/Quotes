@@ -7,7 +7,7 @@
       {{ quote.name}}
         </li>
         <button (click)="toggleDetails(q)">Find Author details</button>
-  <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote"></app-quoteauthor>
+  <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote" (isVoted)='quoteVoted($event,q)'></app-quoteauthor>
 
     </div>
   </div>
