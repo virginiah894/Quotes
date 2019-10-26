@@ -1,12 +1,24 @@
 
 <div>
-    <h1>Quotes to inspire</h1>
+    <h1>Inspiring Quotes</h1>
     <ul>
-      <li *ngFor="let quote of quotes">
+      <div *ngFor="let quote of quotes;let q=index"> 
+        <li> 
       {{ quote.name}}
-  <app-quoteauthor [quote]="quote"></app-quoteauthor>
+        </li>
+        <button (click)="toggleDetails(q)">Find Author details</button>
+  <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote"></app-quoteauthor>
 
-      </li>
-      </ul>
+    </div>
   </div>
   
+
+  <!-- <h1>My Goals</h1>
+<hr>
+<ul>
+  <div *ngFor='let goal of goals;let i = index'>
+    <li>{{goal.name}}</li>
+    <button (click)='toggleDetails(i)'>Toggle Details</button>
+    <app-goal-detail *ngIf='goal.showDescription' [goal]='goal'></app-goal-detail>
+  </div>
+</ul> -->

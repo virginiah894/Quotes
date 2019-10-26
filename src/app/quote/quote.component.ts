@@ -8,7 +8,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  quotes:Quote =[
+  quotes:Quote[] =[
     {id:1,name: "Be inspired before you expire",author:"Pepe Minambo"},
     {id:2,name :"We are what we believe we are!",author:"Maya Angelou"},
     {id:3,name:"Change your thoughts and you change your world",author:"Nelson Mandela"},
