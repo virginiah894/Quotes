@@ -9,8 +9,8 @@ export class HighlightDirective {
   @HostListener("mouseenter") onmouseenter(){
     this.colorChange("red")
   }
-  @HostListener("moueseleave") onMouseLeave(){
-    this.colorChange("None")
+  @HostListener("mouseleave") onmouseleave(){
+    this.colorChange("blue")
   }
  private colorChange(tap:string){
   this.elem.nativeElement.style.color=tap;
