@@ -1,11 +1,18 @@
-
-    <h1>Inspiring Quotes</h1>
-    <ul>
+<div class="container">
+ <h1 class="btn btn-outline-danger">Inspiring Quotes</h1>
+ <div class="row">
+ <div class="col-md-6">
+    
       <div *ngFor="let quote of quotes;let q=index"> 
-        <li appHighlight > 
+        <div appHighlight > 
       {{ quote.name}} published on {{quote.datePublished|date}}
-        </li>
+        </div>
         <button (click)="toggleDetails(q)">Find Author details</button>
   <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote" (isVoted)='deleteQuote($event,q)'></app-quoteauthor>
   </div>
-  </ul>
+  </div>
+  <div class="col-md-6">
+      <app-quote-form></app-quote-form>
+  </div>
+  </div>
+  </div>
