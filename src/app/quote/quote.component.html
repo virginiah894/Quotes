@@ -6,6 +6,6 @@
       {{ quote.name}} published on {{quote.datePublished|date}}
         </li>
         <button (click)="toggleDetails(q)">Find Author details</button>
-  <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote" (isVoted)='upVote($event,q)' (isVoted)="deleteQuote($event,q)"></app-quoteauthor>
+  <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote" (isVoted)='deleteQuote($event,q)'></app-quoteauthor>
   </div>
   </ul>
