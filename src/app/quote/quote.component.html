@@ -1,5 +1,8 @@
 <div class="container">
- <h1 class="btn btn-outline-danger">Inspiring Quotes</h1>
+ <h1 style="text-align: center;">INSPIRING QUOTES</h1>
+ <br>
+ <hr>
+
  <div class="row">
  <div class="col-md-6">
     
@@ -7,7 +10,7 @@
         <div appHighlight > 
       {{ quote.name}} published on {{quote.datePublished|date}}
         </div>
-        <button (click)="toggleDetails(q)">Find Author details</button>
+        <button (click)="toggleDetails(q)" class="btn btn-outline-success" >Find Author details</button>
   <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote" (isVoted)='deleteQuote($event,q)'></app-quoteauthor>
   </div>
   </div>
