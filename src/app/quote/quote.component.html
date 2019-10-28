@@ -6,13 +6,19 @@
  <div class="row">
  <div class="col-md-6">
     
-      <div *ngFor="let quote of quotes;let q=index"> 
+      <div *ngFor="let quote of topVotes;let q=index"> 
         <div appHighlight > 
       {{ quote.name}} 
       
         </div>
         <button (click)="toggleDetails(q)" class="btn btn-outline-success" >Find Quote details</button>
-  <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote"(isVoted)='deleteQuote($event,q)' ></app-quoteauthor>
+        <br>
+        
+        <button (click)="upVote(q)" class ="button">{{quote.upvote}}</button>
+        <button (click)="downVote(q)">{{quote.downvote}}</button>
+<hr>
+  <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote"(isVoted)='deleteQuote($event,q)'></app-quoteauthor>
+  
   </div>
   </div>
   <div class="col-md-6">

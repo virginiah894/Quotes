@@ -9,10 +9,10 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] =[
-    new Quote(1,"Be inspired before you expire","Pepe Minambo",new Date(1982,10,26),"Quicy Aden"),
-    new Quote(2, "We are what we believe we are!","Maya Angelou",new Date(1899,0,20),"Paul Tergat"),
-    new Quote (3,"Change your thoughts and you change your world","Nelson Mandela",new Date(1970,12,19),"Victor Duda"),
-    new Quote(4,"If opportunity doesn't knock, build a door","Kakuzi Bunuzi",new Date(2000,2,17),"Dionysious Kandusi"),
+    new Quote(1,"Be inspired before you expire","Pepe Minambo",new Date(2000,10,26),"Quicy Aden",0,0),
+    new Quote(2, "We are what we believe we are!","Maya Angelou",new Date(1999,0,20),"Paul Tergat",0,0),
+    new Quote (3,"Change your thoughts and you change your world","Nelson Mandela",new Date(2010,12,19),"Victor Duda",0,0),
+    new Quote(4,"If opportunity doesn't knock, build a door","Kakuzi Bunuzi",new Date(1890,2,17),"Dionysious Kandusi",0,0),
     ];
 
 
@@ -21,11 +21,19 @@ export class QuoteComponent implements OnInit {
     }
 
     
-  upVote(isVoted,index){
-    if (isVoted){
-      this.quotes.splice(index,1);
+  upVote(index){
+      this.quotes[index].upvote ++;
     }
-  }
+    downVote(index){
+      this.quotes[index].downvote ++;
+    }
+    get topVotes(){
+      return this.quotes.sort((x,y) =>{
+        return <any>new Date (y.upvote)-<any>new Date (x.upvote);
+      });
+    }
+    
+  
   deleteQuote(isVoted, index){
     if (isVoted) {
       let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
@@ -38,7 +46,7 @@ export class QuoteComponent implements OnInit {
  addNewQuote(quote){
    
   
-  let quoteLength = this.quotes.length;
+  let quoteLength= this.quotes.length;
   quote.id = quoteLength+1;
   quote.datePublished = new Date(quote.datePublished)
   this.quotes.push(quote)
