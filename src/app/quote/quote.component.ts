@@ -33,6 +33,16 @@ export class QuoteComponent implements OnInit {
       });
     }
     
+    currentTop(){
+      for(let quote of this.quotes){
+if(this.quotes.indexOf(quote) === 0 && quote.upvote> 0){
+
+  return quote.name
+}
+}
+    };
+  
+  
   
   deleteQuote(isVoted, index){
     if (isVoted) {
