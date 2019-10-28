@@ -15,7 +15,7 @@ export class HighlightDirective {
 //  private colorChange(tap:string){
 //   this.elem.nativeElement.style.color=tap;
 //  }
- this.elem.nativeElement.style.background="grey";
+ this.elem.nativeElement.style.background="blue";
 }
 
 }

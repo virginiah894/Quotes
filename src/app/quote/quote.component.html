@@ -5,11 +5,7 @@
 
  <div class="row">
  <div class="col-md-6">
-   <div *ngIf="currentTop()" appHighlight>
-     {{currentTop()|uppercase}}
-     
-   </div>
-    
+   
       <div *ngFor="let quote of topVotes;let q=index"> 
         <div> 
       {{ quote.name}} 
@@ -19,7 +15,7 @@
         <br>
         <div id="buttons">
         <button (click)="upVote(q)" style="margin: 12px;"> Upvote:{{quote.upvote}}</button>
-        <button (click)="downVote(q)">Downvote:{{quote.downvote}}</button>
+        <button (click)="downVote(q)" class="bg bg-dark" style="color: bisque;">Downvote:{{quote.downvote}}</button>
         </div>
 <hr>
   <app-quoteauthor *ngIf="quote.showAuthor" [quote]="quote"(isVoted)='deleteQuote($event,q)'></app-quoteauthor>
@@ -30,4 +26,9 @@
       <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
   </div>
   </div>
+  <div *ngIf="currentTop()" appHighlight>
+    {{currentTop()|uppercase}}
+    
+  </div>
+   
   </div>
