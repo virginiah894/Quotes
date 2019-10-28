@@ -6,7 +6,7 @@
 
           <label for="quote">Quote</label>
           <input type="text" class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name='ngModel'required>
-          Display {{newQuote.name}}
+           {{newQuote.name}}
 <div [hidden]="name.valid || name.pristine" class="alert alert-danger"> 
     <p>Input is required</p>
    
@@ -16,7 +16,7 @@
 
           <label for="author">Author</label>
           <textarea class="form-control" id="author" rows="4"[(ngModel)]="newQuote.author" name="author"#author='ngModel' required></textarea>
-          Display {{newQuote.author}}
+           {{newQuote.author}}
 <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
     
     <p>Input is required</p>
@@ -26,7 +26,6 @@
       <div class="form-group">
             <label for="Published">Date Published</label>
             <input type='date' id="Published" [(ngModel)]="newQuote.datePublished" name="datePublished" #datePublished='ngModel'required>
-            Display {{newQuote.datePublished}}
             <div [hidden]="datePublished.valid || datePublished.pristine" class="alert alert-danger">
               <p>Date is required</p>
             </div>
@@ -36,7 +35,7 @@
 
             <label for="submitter">Submitted By</label>
             <input type="text" class="form-control" id="submitter" [(ngModel)]="newQuote.submitter" name="submitter" #submitter='ngModel' required>
-            Display {{newQuote.submitter}}
+             {{newQuote.submitter}}
             <div  [hidden]="submitter.valid || submitter.pristine" class="alert alert-danger">
               <p>Name is required</p>
             </div>

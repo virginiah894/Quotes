@@ -1,7 +1,10 @@
 <p>{{quote.author|uppercase}}</p>
 
 <p> Date published{{quote.datePublished|date}}</p>
-<p>This quote has been published for {{quote.datePublished|dates}} days</p>
+<p>This quote has been published for {{quote.datePublished|dates}} years</p>
 <p>Submitted by {{quote.submitter}}</p>
-<button (click)="quoteVote(true)">Vote Quote</button>
+<button (click)="quoteVote(true)">Upvote Quote</button>
+<button (click)="quoteVote(true)">Downvote Quote</button>
+
+<hr>
 <button (click)="quoteDelete(true)">Delete Quote</button>
